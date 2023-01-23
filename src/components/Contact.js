@@ -1,15 +1,47 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
 import contactImg from "../assets/img/astronaut_email/astronaut_email.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 export const Contact = () => {
+  const form = useRef();
+
   const formInitialDetails = {
     firstName: "",
     lastName: "",
     email: "",
     message: "",
+  };
+  const serviceIdKey = process.env.REACT_APP_SERVICE_ID;
+  const templateIdKey = process.env.REACT_APP_TEMPLATE_ID;
+  const publicIdKey = process.env.REACT_APP_PUBLIC_KEY;
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setButtonText("Sending...");
+    emailjs
+      .sendForm(serviceIdKey, templateIdKey, form.current, publicIdKey)
+      .then(
+        (result) => {
+          setFormDetails(formInitialDetails);
+          setButtonText("Send");
+          setStatus({
+            succes: true,
+            message:
+              "Message sent successfully. I typically respond within 1-3 days. If you do not get a reply, please do not hesitate to e-mail again on erikahendsel@gmail.com.",
+          });
+        },
+        (error) => {
+          setStatus({
+            succes: false,
+            message:
+              "Something went wrong, please try again later or send your message directly to erikahendsel@gmail.com.",
+          });
+          setButtonText("Send");
+        }
+      );
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
@@ -20,34 +52,6 @@ export const Contact = () => {
       ...formDetails,
       [category]: value,
     });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({
-        succes: true,
-        message:
-          "Message sent successfully. I typically respond within 1-3 days. If you do not get a reply, please do not hesitate to e-mail again on erikahendsel@gmail.com!",
-      });
-    } else {
-      setStatus({
-        succes: false,
-        message:
-          "Something went wrong, please try again later or send your message directly to erikahendsel@gmail.com",
-      });
-    }
   };
 
   return (
@@ -67,6 +71,7 @@ export const Contact = () => {
               )}
             </TrackVisibility>
           </Col>
+
           <Col size={12} md={6}>
             <TrackVisibility>
               {({ isVisible }) => (
@@ -76,11 +81,12 @@ export const Contact = () => {
                   }
                 >
                   <h2>Get In Touch</h2>
-                  <form onSubmit={handleSubmit}>
+                  <form ref={form} onSubmit={sendEmail}>
                     <Row>
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
+                          name="user_firstname"
                           value={formDetails.firstName}
                           placeholder="First Name"
                           onChange={(e) =>
@@ -91,7 +97,8 @@ export const Contact = () => {
                       <Col size={12} sm={6} className="px-1">
                         <input
                           type="text"
-                          value={formDetails.lasttName}
+                          name="user_lastname"
+                          value={formDetails.lastName}
                           placeholder="Last Name"
                           onChange={(e) =>
                             onFormUpdate("lastName", e.target.value)
@@ -101,6 +108,7 @@ export const Contact = () => {
                       <Col size={12} sm={12} className="px-1">
                         <input
                           type="email"
+                          name="user_email"
                           value={formDetails.email}
                           placeholder="Email Address"
                           onChange={(e) =>
@@ -111,6 +119,7 @@ export const Contact = () => {
                       <Col size={12} sm={12} className="px-1">
                         <textarea
                           rows="6"
+                          name="user_message"
                           value={formDetails.message}
                           placeholder="Message"
                           onChange={(e) =>
