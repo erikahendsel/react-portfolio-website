@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 15 16" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <rect id="Artboard1" x="0" y="0" width="14.2" height="16" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect x="0" y="0" width="14.2" height="16"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <use xlink:href="#_Image2" x="60.245" y="98.345" width="310px" height="348px" transform="matrix(1.02395,0,0,1.00578,-61.7555,-98.9595)"/>
+    </g>
+    <defs>
+        <image id="_Image2" width="14px" height="16px" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAYAAAAmlE46AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABHElEQVQokZWSTytEURiHn3OvyYyU/MnYkETJypLSZM9GNhZ2voL4Aj6JlQULS5vZjY0oO7KRDaXIYoaUeSzmTE23K3d+dTqd0+/p977vOQFALQMnwCVwBnwAFSAFfoAWMALsAsMhhIMQwQXgFhgE7oBnYCqev4AXYC6u1xDCJBGsqk2L6R4gUQOwBpQopml1JYm9bPUBVoD9BCgD1YJQV4sJ0Aa++wRbCdAEnvoErwBQN9RWwal+qkupOgE8AO/ADDAGJDkpbTpvfRhCqKPuqEdqSZ1Xt9WLnoS2eqpuqrNq2i1zSD1W99RRdVx9zJR3ntupWovmutqIKb26yTIDcW8A68Aynf+5mvGFf+espjmJ138lZu/eMinNrOkXUxgVc16G9D4AAAAASUVORK5CYII="/>
+    </defs>
+</svg>
