@@ -1,5 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import tickImg from "../assets/img/tick.svg";
+import TrackVisibility from "react-on-screen";
 
 export const Skills = () => {
   return (
@@ -8,16 +9,33 @@ export const Skills = () => {
         <Row>
           <Col>
             <div className="skill-bx">
-              <h2>Skills</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                placerat justo lorem, eu congue massa blandit ut. Donec lacinia
-                metus id ante condimentum, quis posuere ante pretium. Proin orci
-                dui, consequat eget blandit quis, ornare et est. Pellentesque
-                habitant morbi tristique senectus et netus et malesuada fames ac
-                turpis egestas.{" "}
-              </p>
-
+              <TrackVisibility>
+                {({ isVisible }) => (
+                  <div className="skills_texts">
+                    <h2
+                      className={
+                        isVisible
+                          ? "animate__animated animate__bounceIn animate__fast"
+                          : ""
+                      }
+                    >
+                      Skills
+                    </h2>
+                    <p
+                      className={
+                        isVisible ? "animate__animated animate__bounceIn" : ""
+                      }
+                    >
+                      I am committed to ongoing skill development and the
+                      utilization of advanced tools in order to ensure the
+                      delivery of exceptional user experience. A constant
+                      pursuit of new technologies and techniques keeps me at the
+                      forefront of the industry, allowing for the delivery of
+                      the best possible user experience.
+                    </p>
+                  </div>
+                )}
+              </TrackVisibility>
               <Row xs={1} md={1} lg={3} className="g-2">
                 <Col className="lg-4 mb-3 d-grid align-items-stretch">
                   <Card bg="dark">

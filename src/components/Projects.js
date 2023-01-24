@@ -73,24 +73,39 @@ export const Projects = () => {
     },
   ];
   return (
-    <section className="project" id="project">
+    <section className="project" id="projects">
       <Container>
         <Row>
           <Col>
             <TrackVisibility>
               {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__slideInDown" : ""
-                  }
-                >
-                  <h2>Projects</h2>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Donec placerat justo lorem, eu congue massa blandit ut.
-                    Donec lacinia metus id ante condimentum, quis posuere ante
-                    pretium.
-                  </p>
+                <div>
+                  <div className="project_texts">
+                    <h2
+                      className={
+                        isVisible
+                          ? "animate__animated animate__bounceIn animate__fast"
+                          : ""
+                      }
+                    >
+                      Projects
+                    </h2>
+                    <p
+                      className={
+                        isVisible ? "animate__animated animate__bounceIn" : ""
+                      }
+                    >
+                      Working on different programming projects has allowed me
+                      to expand my skillset and improve my knowledge of various
+                      programming languages and frameworks. With each new
+                      project, I have been able to apply my growing skills to
+                      create more complex and sophisticated solutions, resulting
+                      in an increase in the quality and functionality of my
+                      projects. As I continue to take on new challenges and
+                      learn new technologies, I am constantly improving my
+                      ability to deliver high-quality and effective solutions.
+                    </p>
+                  </div>
                 </div>
               )}
             </TrackVisibility>
@@ -101,7 +116,7 @@ export const Projects = () => {
                 id="pills-tab"
               >
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Front-End</Nav.Link>
+                  <Nav.Link eventKey="first">Web</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="second">Three.js</Nav.Link>

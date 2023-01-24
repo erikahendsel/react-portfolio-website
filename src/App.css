@@ -253,11 +253,16 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 260px 0 120px 0;
   background-image: url('./assets/img/outer-space-bg/893u_0m0s_210802.jpg');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.banner_texts {
+  background: rgba(47, 28, 0, 0.9);
+  padding: 2rem;
+  border-radius: 30px;
 }
 .banner h1 {
   font-size: 65px;
@@ -322,6 +327,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 60px 50px;
   margin-top: -60px;
 }
+.skills_texts {
+  text-align: center;
+}
+.skills_texts h2 {
+	font-size: 45px;
+	font-weight: 700;
+}
+.skills_texts p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
 .skill h2 {
 	font-size: 45px;
 	font-weight: 700;
@@ -351,6 +371,21 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 80px 0;
   position: relative;
   background-color: black;
+}
+.project_texts {
+  text-align: center;
+}
+.project_texts h2 {
+	font-size: 45px;
+	font-weight: 700;
+}
+.project_texts p {
+  color: #B8B8B8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
 }
 .proj-card {
   background-color: #231F20;
