@@ -7,6 +7,7 @@ import hauntedHouseImg from "../assets/img/projects_images/haunted_house.png";
 import recipeAppImg from "../assets/img/projects_images/android_recipe_app.jpg";
 import activityGeneratorImg from "../assets/img/projects_images/android_activity-generator.jpg";
 import animalQuotesAppImg from "../assets/img/projects_images/jetpack_animal_quotes.jpg";
+import goalAppImg from "../assets/img/projects_images/goal_app_mockup.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
@@ -62,14 +63,21 @@ export const Projects = () => {
       projectUrl: null,
       githubUrl: "https://github.com/erikahendsel/android-activity-generator",
     },
+    // {
+    //   title: "Animal Quote Generator",
+    //   description:
+    //     "Created with Jetpack in Android Studio with Ktor as the quote feeder.",
+    //   imgUrl: animalQuotesAppImg,
+    //   projectUrl: null,
+    //   githubUrl:
+    //     "https://github.com/erikahendsel/jetpack-compose-animal-quote-generator/",
+    // },
     {
-      title: "Animal Quote Generator",
-      description:
-        "Created with Jetpack in Android Studio with Ktor as the quote feeder",
-      imgUrl: animalQuotesAppImg,
+      title: "Goal App - React Native",
+      description: "A React Native app where you can add your year goals.",
+      imgUrl: goalAppImg,
       projectUrl: null,
-      githubUrl:
-        "https://github.com/erikahendsel/jetpack-compose-animal-quote-generator/",
+      githubUrl: "https://github.com/erikahendsel/goal-app-react-native",
     },
   ];
   return (
